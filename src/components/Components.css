@@ -1,0 +1,29 @@
+.bg-image{
+    background-image: url('./../assets/images/sidebar-img.jpg');
+}
+
+.active{
+    color: var(--color-brand);
+}
+.filter-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.filter-container button{
+  margin-right: 2rem;
+  min-width: 5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: white;
+  color: rgb(65, 98, 168);
+  border-radius: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.active {
+    background-color: var(--color-brand2);
+    color: rgb(65, 98, 168);
+}
