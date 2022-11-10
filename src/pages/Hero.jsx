@@ -4,7 +4,7 @@ import React from 'react'
 const Hero = () => {
   return (
          <section id="home">
-        <div className='flex h-screen w-[calc(100vw-250px)]'>
+        <div className='flex h-screen w-[calc(100vw-300px)]'>
           <div className='my-auto ml-10 '>
             <h1 className='text-[42px] leading-[45px] mb-4 '>
               I'M A <span className="text-color-brand">FRONTEND WEB <br/> DEVELOPER</span> FROM <br/>

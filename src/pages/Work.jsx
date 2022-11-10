@@ -14,19 +14,18 @@ const Work = ({ open }) => {
     fetchPopular();
   }, []);
 
-  const fetchPopular = async () => {
+  const fetchPopular = () => {
     setPopular(dataList);
     setFiltered(dataList);
   };
   return (
     <section
       className={`flex flex-col ${
-        open ? "w-[calc(100vw-250px)]" : "w-[calc(100vw-60px)]"
+        open ? "w-[calc(100vw-270px)]" : "w-[calc(100vw-320px)]"
       } duration-300`}
     >
-      <div className={`${open ? "pl-[50px]" : "pl-[180px]"} duration-300`}>
-        <h1 className="mt-10">WORK</h1>
-        <h1 className="">My Recent project</h1>
+      <div className={`${open ? "pl-[70px]" : "pl-[140px]"} duration-300`}>
+        <h1 className="mt-10 font-bold text-[32px]">My Recent project</h1>
         <Filter
           popular={popular}
           setFiltered={setFiltered}

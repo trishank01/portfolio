@@ -27,3 +27,7 @@ button.active {
     background-color: var(--color-brand2);
     color: rgb(65, 98, 168);
 }
+
+.max-width {
+    width: 480px;
+}

@@ -3,24 +3,53 @@ import { BsArrowLeftShort} from 'react-icons/bs'
 import Navbar from './components/Navbar.jsx'
 import NavRoutes from './components/NavRoutes.jsx'
 import './App.css'
+import { useEffect } from 'react'
+import ScreenSize from './components/ScreenSize.jsx'
 
 
 
 function App() {
  const [open, setOpen] = useState(true)
+ const [width, setWidth] = useState(window.innerWidth)
+
 
  const handleToggle = () => {
      setOpen(!open)
  }
 
 
+
+const detectSize = () => {
+   setWidth(window.innerWidth, )
+}
+
+useEffect(() => {
+   window.addEventListener('resize' , detectSize)
+
+   return () => {
+       window.removeEventListener("resize" , detectSize)
+   }
+},[width])
+
+useEffect(() =>{
+  if(width < 640){
+    setOpen(false)
+  }else{
+    setOpen(true)
+  }
+},[width])
+
+
+
+console.log(open)
   return (
-    <div className="flex">
-      <div className={`${open ? 'w-[240px]' : "w-14"} h-screen bg-color-base  relative duration-300 bg-custom`}>
-           <BsArrowLeftShort onClick={handleToggle}  size={30} className={`absolute right-[-10px] top-8 bg-white rounded-full border border-dark-green cursor-pointer ${!open ? "rotate-180" : ""} duration-300 `}/>
-           <Navbar open={open}/>
+    <div className="flex relative">
+      <div className={`fixed top-0 bottom-0 left-0 ${open ? 'w-[240px]' : "w-14"} h-screen bg-color-base  duration-300 bg-custom`}>
+           <BsArrowLeftShort   onClick={handleToggle}  size={30} className={`absolute right-[-10px] top-8 bg-white rounded-full border border-dark-green cursor-pointer ${width < 640 ? "invisible" : "visible"} ${!open ? "rotate-180" : ""} duration-300 `}/>
+           <Navbar width={width} open={open}/>
+        
       </div>
-      <div>
+      <div className={`${open ? "pl-[250px]" : "px-[150px]"} duration-300`}>
       <NavRoutes open={open}/>
       </div>
   </div>

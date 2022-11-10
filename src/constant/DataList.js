@@ -63,4 +63,31 @@ export const dataList = [
     image: image6,
     category : "template_Design"
   },
+  {
+    id: 7,
+    name: "Project Name 2",
+    github: "https://github.com/trishank01/movie_search",
+    Livelink: "https://z918gg.csb.app/",
+    tech: ["HTML", "CSS", "reactjs"],
+    image: image6,
+    category : "template_Design"
+  },
+  {
+    id: 8,
+    name: "Project Name 2",
+    github: "https://github.com/trishank01/movie_search",
+    Livelink: "https://z918gg.csb.app/",
+    tech: ["HTML", "CSS", "reactjs"],
+    image: image6,
+    category : "template_Design"
+  },
+  {
+    id: 9,
+    name: "Project Name 2",
+    github: "https://github.com/trishank01/movie_search",
+    Livelink: "https://z918gg.csb.app/",
+    tech: ["HTML", "CSS", "reactjs"],
+    image: image6,
+    category : "template_Design"
+  },
 ];
