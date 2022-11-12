@@ -10,10 +10,10 @@ import image6 from '../assets/images/work/image6.jpg'
 export const dataList = [
   {
     id: 1,
-    name: "Project Name 1",
+    name: "Movie Search App with Reactjs",
     github: "https://github.com/trishank01/solorsystem",
     Livelink: "https://trishank01.github.io/solorsystem/",
-    tech: ["HTML", "CSS"],
+    tech: ["CSS" , "reactjs" , "firebase"],
     image: image1,
     category : "template_Design"
   },
@@ -31,7 +31,7 @@ export const dataList = [
     name: "Project Name 2",
     github: "https://github.com/trishank01/movie_search",
     Livelink: "https://z918gg.csb.app/",
-    tech: ["HTML", "CSS", "reactjs"],
+    tech: ["HTML", "CSS", "javascript"],
     image: image3,
     category : "javascript"
   },
@@ -50,7 +50,7 @@ export const dataList = [
     name: "Project Name 2",
     github: "https://github.com/trishank01/movie_search",
     Livelink: "https://z918gg.csb.app/",
-    tech: ["HTML", "CSS", "reactjs"],
+    tech: ["HTML", "CSS", "javascript"],
     image: image5,
     category : "javascript"
   },
@@ -59,7 +59,7 @@ export const dataList = [
     name: "Project Name 2",
     github: "https://github.com/trishank01/movie_search",
     Livelink: "https://z918gg.csb.app/",
-    tech: ["HTML", "CSS", "reactjs"],
+    tech: ["HTML", "CSS"],
     image: image6,
     category : "template_Design"
   },
@@ -68,7 +68,7 @@ export const dataList = [
     name: "Project Name 2",
     github: "https://github.com/trishank01/movie_search",
     Livelink: "https://z918gg.csb.app/",
-    tech: ["HTML", "CSS", "reactjs"],
+    tech: ["HTML", "CSS"],
     image: image6,
     category : "template_Design"
   },
@@ -77,9 +77,9 @@ export const dataList = [
     name: "Project Name 2",
     github: "https://github.com/trishank01/movie_search",
     Livelink: "https://z918gg.csb.app/",
-    tech: ["HTML", "CSS", "reactjs"],
+    tech: ["HTML", "CSS", "javascript"],
     image: image6,
-    category : "template_Design"
+    category : "javascript"
   },
   {
     id: 9,
@@ -88,6 +88,6 @@ export const dataList = [
     Livelink: "https://z918gg.csb.app/",
     tech: ["HTML", "CSS", "reactjs"],
     image: image6,
-    category : "template_Design"
+    category : "reactjs"
   },
 ];

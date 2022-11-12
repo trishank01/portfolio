@@ -18,25 +18,24 @@ const Work = ({ open }) => {
     setPopular(dataList);
     setFiltered(dataList);
   };
+
   return (
-    <section
-      className={`flex flex-col ${
-        open ? "w-[calc(100vw-270px)]" : "w-[calc(100vw-320px)]"
-      } duration-300`}
-    >
-      <div className={`${open ? "pl-[70px]" : "pl-[140px]"} duration-300`}>
-        <h1 className="mt-10 font-bold text-[32px]">My Recent project</h1>
+    <section className={`flex md:flex-col duration-300 xl:w-[1240px]`}>
+      <div
+        className={`${open ? "md:ml-[50px]" : "md:ml-[150px]"} duration-300 `}
+      >
+        <h1 className="mt-10 font-bold md:text-[32px]">My Recent project</h1>
         <Filter
           popular={popular}
           setFiltered={setFiltered}
           activeGenre={activeGenre}
           setActiveGenre={setActiveGenre}
         />
-        <div layout className="container flex flex-wrap">
+        <div layout className="container flex flex-wrap justify-center">
           <>
-            {filtered.map((item) => (
+            {filtered.map((item, index) => (
               <AnimatePresence>
-                <ItemList key={item.id} item={item} />
+                <ItemList key={"filterd" + index + item.id} item={item} />
               </AnimatePresence>
             ))}
           </>

@@ -23,7 +23,7 @@
 };
 
 .color-base2{
-  background-color: 022a30;;  
+  background-color: #022a30;;  
 }
 
 body {
@@ -47,3 +47,24 @@ a:hover {
     color: var(--color-brand);
 }
 
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #033f47bc; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+  
+    background: var(--color-base); 
+  }

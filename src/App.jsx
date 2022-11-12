@@ -41,15 +41,14 @@ useEffect(() =>{
 
 
 
-console.log(open)
   return (
     <div className="flex relative">
-      <div className={`fixed top-0 bottom-0 left-0 ${open ? 'w-[240px]' : "w-14"} h-screen bg-color-base  duration-300 bg-custom`}>
+      <div className={`fixed top-0 bottom-0 left-0 ${open ? 'w-[240px]' : "w-14"}  bg-color-base  duration-300 bg-custom`}>
            <BsArrowLeftShort   onClick={handleToggle}  size={30} className={`absolute right-[-10px] top-8 bg-white rounded-full border border-dark-green cursor-pointer ${width < 640 ? "invisible" : "visible"} ${!open ? "rotate-180" : ""} duration-300 `}/>
            <Navbar width={width} open={open}/>
         
       </div>
-      <div className={`${open ? "pl-[250px]" : "px-[150px]"} duration-300`}>
+      <div className={`absolute ${width < 640 || !open ? "left-[100px]" : "left-[250px]"} duration-300`}>
       <NavRoutes open={open}/>
       </div>
   </div>

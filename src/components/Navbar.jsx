@@ -15,7 +15,7 @@ const Navbar = ({ open }) => {
     <div
       className={`flex flex-col ${open ? "mx-5" : ""}  ${
         open ? "w-[200px] h-[200px]" : "w-[50px] h-[50px]"
-      } ${open ? "mt-[40px]" : "mt-[80px]"} duration-300 `}
+      } ${open ? "mt-[40px]" : "mt-[80px]"} duration-300 ml-1`}
     >
       <div>
         <img

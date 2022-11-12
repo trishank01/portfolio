@@ -31,3 +31,24 @@ button.active {
 .max-width {
     width: 480px;
 }
+
+.custom-display{
+    display: none;
+}
+
+.custom-hover:hover .custom-display{
+    display: flex;
+}
+
+/*item List css */
+
+.box{
+    width: 300px;
+    height: 220px;
+}
+
+.box-arrow{
+    padding: 10px;
+    border-radius: 12px;
+}
+
