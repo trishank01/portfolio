@@ -24,7 +24,7 @@ const Work = ({ open }) => {
       <div
         className={`${open ? "md:ml-[50px]" : "md:ml-[150px]"} duration-300 `}
       >
-        <h1 className="mt-10 font-bold md:text-[32px]">My Recent project</h1>
+        <h1 className="mt-10 font-bold md:text-[32px]">My Recent Project</h1>
         <Filter
           popular={popular}
           setFiltered={setFiltered}
@@ -32,12 +32,12 @@ const Work = ({ open }) => {
           setActiveGenre={setActiveGenre}
         />
         <div layout className="container flex flex-wrap justify-center">
-          <>
-            {filtered.map((item, index) => (
+        <>
+          {filtered.map((item, index) => (
               <AnimatePresence>
-                <ItemList key={"filterd" + index + item.id} item={item} />
+                <ItemList key={item.id + "filter" + index} item={item} />
               </AnimatePresence>
-            ))}
+          ))}
           </>
         </div>
       </div>

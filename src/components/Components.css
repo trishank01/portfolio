@@ -40,11 +40,21 @@ button.active {
     display: flex;
 }
 
+.myAnimation {
+    animation: crescendo .3s alternate infinite ease-in-out;
+  }
+  
+  @keyframes crescendo {
+    0%   {transform: scale(.9);}
+    50%   {transform: scale(1);}
+    100% {transform: scale(1.1);}
+  }
+
 /*item List css */
 
 .box{
     width: 300px;
-    height: 220px;
+    height: 250px;
 }
 
 .box-arrow{

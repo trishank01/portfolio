@@ -48,7 +48,7 @@ useEffect(() =>{
            <Navbar width={width} open={open}/>
         
       </div>
-      <div className={`absolute ${width < 640 || !open ? "left-[100px]" : "left-[250px]"} duration-300`}>
+      <div className={`absolute ${width < 640 || !open ? "left-[70px]" : "left-[250px]"} duration-300`}>
       <NavRoutes open={open}/>
       </div>
   </div>
