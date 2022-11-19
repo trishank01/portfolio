@@ -5,7 +5,7 @@ import { dataList } from "./../constant/DataList";
 import ItemList from "../components/ItemList";
 import { AnimatePresence } from "framer-motion";
 
-const Work = ({ open }) => {
+const Work = ({ open, width }) => {
   const [popular, setPopular] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [activeGenre, setActiveGenre] = useState("All");
@@ -18,26 +18,35 @@ const Work = ({ open }) => {
     setPopular(dataList);
     setFiltered(dataList);
   };
-
+  console.log(filtered.length)
   return (
-    <section className={`flex md:flex-col duration-300 xl:w-[1240px]`}>
-      <div
-        className={`${open ? "md:ml-[50px]" : "md:ml-[150px]"} duration-300 `}
-      >
-        <h1 className="mt-10 font-bold md:text-[32px]">My Recent Project</h1>
+    <section
+      className={`flex md:flex-col duration-300 xl:w-[1240px] absolute ${
+        width < 640 ? "left-[95px]" : "left-[240px]"
+      }`}
+    >
+      <div>
+        <h1 className="mt-10 font-bold ml-4 md:text-[32px]">
+          My Recent Project
+        </h1>
         <Filter
           popular={popular}
           setFiltered={setFiltered}
           activeGenre={activeGenre}
           setActiveGenre={setActiveGenre}
         />
-        <div layout className="container flex flex-wrap justify-center">
-        <>
-          {filtered.map((item, index) => (
-              <AnimatePresence>
-                <ItemList key={item.id + "filter" + index} item={item} />
-              </AnimatePresence>
-          ))}
+        <div
+          layout
+          className="flex flex-col md:flex-row flex-wrap items-center justify-center"
+        >
+          <>
+            {filtered.length === 0
+              ? "Loading..."
+              : filtered.map((item, index) => (
+                  <AnimatePresence>
+                    <ItemList key={item.id + "filter" + index} item={item} />
+                  </AnimatePresence>
+                ))}
           </>
         </div>
       </div>

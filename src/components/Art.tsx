@@ -27,16 +27,16 @@ const motionForce = (x: number, y: number): ParticleForce => {
   return forces.disturbance(x, y, 20);
 };
 
-export default function App() {
+export default function Art() {
 
   return (
     <ParticleImage
       src={"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/480px-JavaScript-logo.png"}
-      width={Number(500)}
+      width={Number(400)}
       height={Number(400)}
       scale={0.85}
       entropy={20}
-      maxParticles={4000}
+      maxParticles={3000}
       particleOptions={particleOptions}
       mouseMoveForce={motionForce}
       touchMoveForce={motionForce}

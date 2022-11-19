@@ -40,7 +40,7 @@ const Navbar = ({ open }) => {
         <NavLink className={`py-[10px] ${activeLink}`} to="/work">
           <div className="flex">
             <img src={work} alt="icons" className="w-12" />
-            {open && <span className="pt-3 px-3">Work</span>}
+            {open && <span className="pt-3 px-3">Portfolio</span>}
           </div>
         </NavLink>
         <NavLink className={`py-[10px] ${activeLink}`} to="/about">
