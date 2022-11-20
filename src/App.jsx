@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar.jsx";
 import NavRoutes from "./components/NavRoutes.jsx";
 import "./App.css";
 import { useEffect } from "react";
-import ScreenSize from "./components/ScreenSize.jsx";
+import AdminRoutes from "./pages/admin/AdminRoutes.jsx";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -35,10 +35,10 @@ function App() {
   }, [width]);
 
   return (
+    <>
     <div className="flex relative">
       <div className="w-14 sm:w-[240px]">
-        <div
-          className={`fixed top-0 bottom-0 left-0 ${
+        <div className={`fixed top-0 bottom-0 left-0 ${
             open ? "w-[240px]" : "w-14"
           }  bg-color-base  duration-300 bg-custom`}
         >
@@ -54,8 +54,11 @@ function App() {
       </div>
       <div>
         <NavRoutes open={open} width={width} />
-      </div>
+        <AdminRoutes/>
+      </div>  
     </div>
+
+    </>
   );
 }
 

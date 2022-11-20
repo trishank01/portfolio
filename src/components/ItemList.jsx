@@ -37,7 +37,7 @@ const ItemList = ({ item }) => {
       transition={{ duration: 0.5 }}
     >
       <div className="flex items-center  justify-center ">
-        <div className="relative  rounded-[16px] overflow-hidden mb-5 w-[240px] md:w-[300px] h-[248px]">
+        <div className="relative  rounded-[16px] overflow-hidden mb-5 md:ml-5 w-[240px] md:w-[300px] h-[248px]">
           <div className="shadow-lg h-full rounded-lg">
           <img  className="z-0 h-full object-cover hover:scale-110 duration-300" src={item.image} />
           </div>

@@ -24,7 +24,7 @@ console.log(width)
             and deligtful experiences <br /> tailored and conversion-focused
           </p>
           <div className="bg-color-brand inline-block px-3 py-4 rounded-md  font-base font-semibold cursor-pointer">
-            <Link to="/work" className="text-color-base2">Explore My Work</Link>
+            <Link to="/work" className="hover:text-color-base2 text-color-base">Explore My Work</Link>
           </div>
         </div>
         {width > 1068 && (<div className="w-[700px]">
