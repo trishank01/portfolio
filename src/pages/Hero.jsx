@@ -1,12 +1,32 @@
+import { onAuthStateChanged } from "firebase/auth";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Art from "../components/Art";
+import { auth } from "../firebase/config";
+import { REGISTER_USER_Email, SelectRegisterUser } from "../redux/slice/authSlice";
+
 
 
 
 const Hero = ({open , width}) => {  
-console.log(width)
+  const dispatch = useDispatch()
+  const email = useSelector(SelectRegisterUser)
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // const uid = user.uid;
+        dispatch(REGISTER_USER_Email(user.email))
+      } else {
+        //dispatch(REMOVE_ACTIVE_USER());
+        // User is signed out
+        // ...
+      }
+    });
+  }, [dispatch]);
+console.log("email" , email)
   return (
     <section id="home" >
       <div className={`flex h-screen w-[80vw] absolute ${width < 640 ? "left-[90px]" : "left-[250px]"} `}>

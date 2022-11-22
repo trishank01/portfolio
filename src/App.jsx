@@ -5,6 +5,8 @@ import NavRoutes from "./components/NavRoutes.jsx";
 import "./App.css";
 import { useEffect } from "react";
 import AdminRoutes from "./pages/admin/AdminRoutes.jsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -36,28 +38,37 @@ function App() {
 
   return (
     <>
-    <div className="flex relative">
-      <div className="w-14 sm:w-[240px]">
-        <div className={`fixed top-0 bottom-0 left-0 ${
-            open ? "w-[240px]" : "w-14"
-          }  bg-color-base  duration-300 bg-custom`}
-        >
-          <BsArrowLeftShort
-            onClick={handleToggle}
-            size={30}
-            className={`absolute right-[-10px] top-8 bg-white rounded-full border border-dark-green cursor-pointer ${
-              width < 640 ? "invisible" : "visible"
-            } ${!open ? "rotate-180" : ""} duration-300 `}
-          />
-          <Navbar width={width} open={open} />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        rtl={false}
+        pauseOnFocusLoss
+        pauseOnHover
+        theme="light"
+      />
+      <div className="flex relative">
+        <div className="w-14 sm:w-[240px]">
+          <div
+            className={`fixed top-0 bottom-0 left-0 ${
+              open ? "w-[240px]" : "w-14"
+            }  bg-color-base  duration-300 bg-custom`}
+          >
+            <BsArrowLeftShort
+              onClick={handleToggle}
+              size={30}
+              className={`absolute right-[-10px] top-8 bg-white rounded-full border border-dark-green cursor-pointer ${
+                width < 640 ? "invisible" : "visible"
+              } ${!open ? "rotate-180" : ""} duration-300 `}
+            />
+            <Navbar width={width} open={open} />
+          </div>
+        </div>
+        <div>
+          <NavRoutes open={open} width={width} />
+          <AdminRoutes />
         </div>
       </div>
-      <div>
-        <NavRoutes open={open} width={width} />
-        <AdminRoutes/>
-      </div>  
-    </div>
-
     </>
   );
 }

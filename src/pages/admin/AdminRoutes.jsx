@@ -1,13 +1,24 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Admin from './Admin'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Login from "../auth/Login";
+import Admin from "./Admin";
+import AdminOnlyRoute from "./AdminOnlyRoute";
 
 const AdminRoutes = () => {
   return (
     <Routes>
-    <Route path="/admin" element={<Admin />}></Route>
-  </Routes>
-  )
-}
+      <Route
+        path="/admin"
+        element={
+          <AdminOnlyRoute>
+            <Admin />
+          </AdminOnlyRoute>
+        }
+      ></Route>
+      <Route path="/login" element={<Login />}></Route>
+      
+    </Routes>
+  );
+};
 
-export default AdminRoutes
+export default AdminRoutes;

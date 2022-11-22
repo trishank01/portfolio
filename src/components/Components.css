@@ -71,3 +71,6 @@ button.active {
     border-radius: 12px;
 }
 
+.ql-editor {
+    min-height: 230px;
+}
