@@ -10,12 +10,11 @@ import {
 } from "react-icons/si";
 import { IoLogoFirebase } from "react-icons/io5";
 import { GrReactjs } from "react-icons/gr";
-import { AiFillHtml5 } from "react-icons/ai";
 import { DiSass } from "react-icons/di";
 import { CardData } from "../constant/CardData";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { useEffect } from "react";
-import { data } from "autoprefixer";
+
 
 const About = ({ width }) => {
   const [zindex, setZindex] = useState("js");
@@ -31,7 +30,7 @@ const About = ({ width }) => {
   useEffect(() => {
     let id = CardData.map((item) => item.id);
     setDataID(id);
-  }, [CardData , current]);
+  }, [CardData]);
 
 
   const handleNext = () => {

@@ -52,6 +52,23 @@ button.active {
     100% {transform: scale(1.1);}
   }
 
+
+  .pulse  {
+    filter: blur(3px);
+    animation : leftToRight 2s Infinite;
+
+ }
+
+ @keyframes leftToRight {
+    0% {
+        transform: translateX(-300px);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateX(800px);
+        opacity: 0;
+    }
+   }
 /*item List css */
 
 .box{

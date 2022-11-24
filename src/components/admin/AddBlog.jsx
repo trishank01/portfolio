@@ -22,9 +22,6 @@ import { db, storage } from "../../firebase/config";
 
 const AddBlog = () => {
   const [quill, setQuill] = useState("");
-  const [blogPostData, setBlogPostData] = useState({});
-  const [imageUpload, setImageUpload] = useState(null);
-  const imageListRef = ref(storage, "images/");
   const [postValue, setPostValue] = useState({
     title: "",
     subtitle : "",
@@ -75,6 +72,7 @@ const AddBlog = () => {
     const imageRef = ref(storage, `images/${file.name}${Date.now()}`);
     uploadBytes(imageRef, file).then(
       (snapshot) => {
+        toast.success("image uploaded")
         getDownloadURL(snapshot.ref).then((downloadURL) => {
           setPostValue({ ...postValue, imageURL: downloadURL });
         });
@@ -87,7 +85,7 @@ const AddBlog = () => {
   };
 
   return (
-    <section className="flex border w-[65vw]">
+    <section className="flex w-[65vw]">
       <div>
         <div className=" w-[1000px]">
           <h1 className="p-4 pb-0 mx-8 flex justify-start">ADD BLOG POST</h1>

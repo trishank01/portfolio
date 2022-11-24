@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/config";
-import { REGISTER_USER_Email } from "../../redux/slice/authSlice";
+import { REGISTER_USER_Email, USER_DISPLAY_NAME } from "../../redux/slice/authSlice";
 import { useDispatch } from "react-redux";
 
 
@@ -35,6 +35,7 @@ const Login = () => {
       if (user) {
         // const uid = user.uid;
         dispatch(REGISTER_USER_Email(user.email))
+        dispatch(USER_DISPLAY_NAME(user.displayName))
       } else {
         //dispatch(REMOVE_ACTIVE_USER());
         // User is signed out
