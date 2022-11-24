@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import About from "../pages/About";
 import Admin from "../pages/admin/Admin";
 import Blog from "../pages/blogPage/Blog";
+import BlogDetails from "../pages/blogPage/BlogDetails";
 import Contact from "../pages/Contact";
 import Hero from "../pages/Hero";
 import Reviews from "../pages/Reviews";
@@ -19,6 +20,7 @@ const NavRoutes = ({open , width}) => {
         <Route path="/reviews" element={<Reviews />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/blogdetails/:id" element={<BlogDetails />}></Route>
       </Routes>
     </div>
   );

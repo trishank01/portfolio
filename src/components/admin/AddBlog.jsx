@@ -44,6 +44,8 @@ const AddBlog = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    const today = new Date();
+    const date = today.toDateString();
     try {
       addDoc(collection(db, "blog"), {
         title: postValue.title,
@@ -51,6 +53,7 @@ const AddBlog = () => {
         category: postValue.category,
         blogbody: quill,
         imageURL: postValue.imageURL,
+        postDate: date,
         createdAt: Timestamp.now().toDate(),
       });
       toast.success("blog added Successfully..");
@@ -143,7 +146,7 @@ const AddBlog = () => {
               />
             </div>
 
-            <div className="m-8 bg-white  text-black w-[84%]">
+            <div className="ml-11 p-6 bg-white text-black w-[84%]">
               <ReactQuill
                 placeholder="write your thought here"
                 modules={AddBlog.modules}
