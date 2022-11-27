@@ -44,7 +44,7 @@ const BlogDetails = () => {
     <div>
       {filterBlog.map((item) => {
         return (
-          <div className="w-[80vw]  text-white mx-10 my-10 px-10">
+          <div className="w-[80vw]  text-white mx-10 my-10 px-10" key={item.id}>
             <div className="flex flex-col md:flex-row md:pl-4 ">
               <div className="w-[320px] md:w-[70%] my-3 ">
                 <h1 className="font-bold text-[32px] md:text-[42px] pb-6 text-color-brand">{item.title}</h1>

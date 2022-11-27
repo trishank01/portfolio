@@ -1,9 +1,12 @@
 import {
   addDoc,
   collection,
+  doc,
+  setDoc,
   Timestamp,
 } from "firebase/firestore";
 import {
+  deleteObject,
   getDownloadURL,
   ref,
   uploadBytes,
@@ -13,7 +16,7 @@ import ReactQuill from "react-quill";
 import { toast } from "react-toastify";
 import "../../../node_modules/react-quill/dist/quill.snow.css";
 import { db, storage } from "../../firebase/config";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { selectBlogData } from "../../redux/slice/blogSlice";
 import { useSelector } from "react-redux";
 
@@ -24,7 +27,7 @@ const initialState = {
     category: "",
     image: "",
     imageURL: "",
-    blogbody : ""
+    blogbody: ""
   }
 
 
@@ -32,18 +35,22 @@ const AddBlog = () => {
 
   const {id} = useParams()
   const blogData = useSelector(selectBlogData)
-  const [quill, setQuill] = useState("");
   const blogEdit = blogData.find((item) => item.id === id)
+  const [quill, setQuill] = useState(id === "add" ? initialState.blogbody : blogEdit.blogbody);
+  
+  console.log(quill)
   // const [postValue, setPostValue] = useState(initialState);
 
   const [postValue, setPostValue] = useState(() => {
     const newState = detectForm(id ,
       {...initialState}, 
-      blogEdit
+      blogEdit 
       )
       console.log(newState)
       return newState
   });
+
+  const navigate = useNavigate()
 
 
   function detectForm(id , f1 ,f2) {
@@ -54,12 +61,6 @@ const AddBlog = () => {
       return f2
     }
 }
-
-
-
- 
-
-
 
   const handleRichTextChange = (e) => {
     setQuill(e);
@@ -85,6 +86,7 @@ const AddBlog = () => {
         createdAt: Timestamp.now().toDate(),
       });
       toast.success("blog added Successfully..");
+      navigate("/blog")
     } catch (error) {
       toast.error(error.message);
     }
@@ -97,13 +99,43 @@ const AddBlog = () => {
     setQuill("");
   };
 
-  const handleFromEdit = () => {
+  const handleFromEdit = (e) => {
+      e.preventDefault();
+      const today = new Date();
+      const date = today.toDateString();
+     if(postValue.imageURL !== blogEdit.imageURL){
+      const imageRef = ref(storage , blogEdit.imageURL)
+      deleteObject(imageRef)
+     }
+     try {
+      setDoc(doc(db, "blog" , id), {
+        title: postValue.title,
+        subtitle : postValue.subtitle,
+        category: postValue.category,
+        blogbody: quill,
+        imageURL: postValue.imageURL,
+        postDate: blogEdit.postDate,
+        createdAt : blogEdit.createdAt,
+        editedAt : Timestamp.now().toDate() 
+      });
+      toast.success("blog Edited Successfully..");
+      navigate("/blog")
+    } catch (error) {
+      toast.error(error.message);
+    }
+    setPostValue({
+      title: "",
+      category: "",
+      image: "",
+      imageURL: "",
+    });
+    setQuill("");
+
 
   }
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-
     const imageRef = ref(storage, `images/${file.name}${Date.now()}`);
     uploadBytes(imageRef, file).then(
       (snapshot) => {
@@ -186,7 +218,7 @@ const AddBlog = () => {
                 theme="snow"
                 formats={AddBlog.formats}
                 onChange={(e) => handleRichTextChange(e)}
-                value={id === "add" ? quill : postValue.blogbody }
+                value={quill}
               />
             </div>
             <div className="m-8">

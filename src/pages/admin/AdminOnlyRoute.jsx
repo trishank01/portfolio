@@ -29,7 +29,7 @@ const AdminOnlyRoute = ({ children }) => {
   }, [dispatch, userEmail]);
 
 
-    if (userEmail === "trishank01@gmail.com") {
+    if (userEmail === "admin@trishank.me") {
       return children;
     }
   

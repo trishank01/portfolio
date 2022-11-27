@@ -11,7 +11,7 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { TbEdit } from "react-icons/tb";
 import { LoginNavigation } from "../admin/LoginNavigation";
 import { doc, deleteDoc } from "firebase/firestore";
-import { async } from "@firebase/util";
+
 
 const Blog = () => {
   const [data, setData] = useState([]);
@@ -69,7 +69,7 @@ const handleblogPostRemove = async (id) => {
       </div>
     );
   }
-
+  console.log(data)
   return (
     <section className="flex justify-center h-screen relative w-[84vw]">
       <h1>Trishank's Blog</h1>

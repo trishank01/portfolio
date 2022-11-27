@@ -10,6 +10,9 @@ import {
   SelectRegisterUser,
 } from "../redux/slice/authSlice";
 
+import{ AiFillGithub, AiFillLinkedin }from "react-icons/ai"
+import{ SiFiverr }from "react-icons/si"
+
 const Hero = ({ open, width }) => {
   const dispatch = useDispatch();
   const email = useSelector(SelectRegisterUser);
@@ -53,6 +56,17 @@ const Hero = ({ open, width }) => {
               Explore My Work
             </button>
           </Link>
+            <div className="flex mt-5 text-[40px] gap-4 duration-500">
+              <a href="https://github.com/trishank01" target="_blank" >
+            <AiFillGithub className="hover:text-color-brand hover:scale-125 hover:rotate-[360deg] duration-700"/>
+            </a>
+            <a href="https://www.linkedin.com/in/trishank-khatri" target="_blank" >
+          <AiFillLinkedin className="hover:text-color-brand hover:scale-125 hover:rotate-[360deg] duration-700"/>
+          </a>
+          <a href="https://www.fiverr.com/trishankk" target="_blank" >
+          <SiFiverr className="hover:text-color-brand hover:scale-125 hover:rotate-[360deg] duration-700"/>
+          </a>
+            </div>
         </div>
         {width > 1068 && (
           <div className="w-[700px]">
