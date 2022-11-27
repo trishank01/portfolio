@@ -12,7 +12,7 @@ const CardSkeleton = () => {
   //    }
   // }
   return (
-    <section className="w-[450px]">
+    <section className="w-[340px]  md:w-[450px]">
       <div className="flex flex-col pt-5 gap-3 ">
         <div className="flex flex-col w-full px-3 animate-pulse">
           <div className="relative flex flex-col rounded w-full p-4 shadow bg-white overflow-hidden">
@@ -36,7 +36,6 @@ const CardSkeleton = () => {
             </div>
           </div>
         </div>
-     
       </div>
     </section>
   );

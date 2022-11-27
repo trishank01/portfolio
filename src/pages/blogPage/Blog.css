@@ -1,3 +1,66 @@
 .imgWidth img {
     width: 300px;
 }
+
+
+
+.ql-snow pre.ql-syntax {
+    background-color: #EEEEF0;
+    color: black;
+    overflow: visible;
+    border-radius: 10px;
+    padding: 8px;
+    font-weight: 600;
+}
+
+.ql-snow ul {
+    list-style: disc; 
+    margin: 10px;
+    padding: 10px 30px;
+  }
+
+  .ql-snow li {
+    padding: 5px;
+  }
+
+  .ql-snow p {
+    padding: 5px;
+  }
+
+  .ql-snow span {
+    color: white !important;
+  }
+  
+  li a{
+    text-decoration: none;
+    color: var(--color-body);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: all 0.4s ease;
+  }
+  
+  .ql-snow li:hover {
+    color: #deff58;
+  }
+
+  .displayBlock{
+    display: flex;
+  }
+
+
+  @media screen and (max-width:765px) {
+    .displayBlock{
+      display: none;
+    }
+  }
+
+  .displayBlockMobile{
+    display: none;
+  }
+
+  @media screen and (max-width:765px) {
+    .displayBlockMobile{
+      display: flex;
+    }
+  }
+  

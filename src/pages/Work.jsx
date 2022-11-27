@@ -21,12 +21,12 @@ const Work = ({ open, width }) => {
   console.log(filtered.length)
   return (
     <section
-      className={`flex md:flex-col duration-300 xl:w-[1240px] absolute ${
-        width < 640 ? "left-[95px]" : "left-[240px]"
+      className={`flex md:flex-col  duration-300 xl:w-[1240px] absolute ${
+        width < 640 ? "left-[90px]" : "left-[240px]"
       }`}
     >
       <div>
-        <h1 className="mt-10 font-bold ml-4 md:text-[32px]">
+        <h1 className="mt-10 font-bold ml-4 text-[24px] md:text-[32px]">
           My Recent Project
         </h1>
         <Filter
@@ -37,7 +37,7 @@ const Work = ({ open, width }) => {
         />
         <div
           layout
-          className="flex flex-col md:flex-row flex-wrap items-center justify-center"
+          className="flex flex-col md:flex-row  flex-wrap items-center justify-center"
         >
           <>
             {filtered.length === 0

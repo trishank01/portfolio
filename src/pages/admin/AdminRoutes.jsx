@@ -8,7 +8,7 @@ const AdminRoutes = () => {
   return (
     <Routes>
       <Route
-        path="/admin"
+        path="/admin/:id"
         element={
           <AdminOnlyRoute>
             <Admin />
@@ -16,7 +16,6 @@ const AdminRoutes = () => {
         }
       ></Route>
       <Route path="/login" element={<Login />}></Route>
-      
     </Routes>
   );
 };

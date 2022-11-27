@@ -66,23 +66,23 @@ const Navbar = ({ open }) => {
       </div>
       <nav
         className={`flex flex-col  ${
-          open ? "mt-[40px]" : "mt-[60px] "
+          open ? "mt-[25px]" : "mt-[60px] "
         } font-semibold text-lg font-base`}
       >
-        <NavLink className={`py-[10px] ${activeLink}]`} to="/">
+        <NavLink className={`py-[6px] ${activeLink}]`} to="/">
           <div className="flex">
             <img src={home} alt="icons" className="w-12" />
             {open && <span className="pt-3 px-3">HOME</span>}
           </div>
         </NavLink>
-        <NavLink className={`py-[10px] ${activeLink}`} to="/work">
+        <NavLink className={`py-[6px] ${activeLink}`} to="/work">
           <div className="flex">
             <img src={work} alt="icons" className="w-12" />
             {open && <span className="pt-3 px-3">PORTFOLIO</span>}
           </div>
         </NavLink>
          <LogoutNavigation>
-         <NavLink className={`py-[10px] ${activeLink}`} to="/about">
+         <NavLink className={`py-[6px] ${activeLink}`} to="/about">
           <div className="flex">
             <img src={hacker} alt="icons" className="w-12" />
             {open && <span className="pt-3 px-3">ABOUT</span>}
@@ -90,7 +90,7 @@ const Navbar = ({ open }) => {
         </NavLink>
          </LogoutNavigation>
         <LogoutNavigation>
-          <NavLink className={`py-[10px] ${activeLink}`} to="/reviews">
+          <NavLink className={`py-[6px] ${activeLink}`} to="/reviews">
             <div className="flex">
               <img src={review} alt="icons" className="w-12" />
               {open && <span className="pt-3 px-3">REVIEWS</span>}
@@ -98,7 +98,7 @@ const Navbar = ({ open }) => {
           </NavLink>
         </LogoutNavigation>
 
-        <NavLink className={`py-[10px] ${activeLink}`} to="/blog">
+        <NavLink className={`py-[6px] ${activeLink}`} to="/blog">
           <div className="flex">
             <img src={blog} alt="icons" className="w-12" />
             {open && <span className="pt-3 px-3">BLOG</span>}
@@ -107,7 +107,7 @@ const Navbar = ({ open }) => {
 
 
         <LoginNavigation>
-          <NavLink className={`py-[10px] ${activeLink}`} to="/admin">
+          <NavLink className={`py-[6px] ${activeLink}`} to="/admin/add">
             <div className="flex">
               <img src={blog} alt="icons" className="w-12" />
               {open && <span className="pt-3 px-3">ADMIN</span>}
@@ -116,7 +116,7 @@ const Navbar = ({ open }) => {
         </LoginNavigation>
 
         <LogoutNavigation>
-          <NavLink className={`py-[10px] ${activeLink}`} to="/contact">
+          <NavLink className={`py-[6px] ${activeLink}`} to="/contact">
             <div className="flex">
               <img src={contact} alt="icons" className="w-12" />
               {open && <span className="pt-3 px-3">CONTACT</span>}
@@ -125,12 +125,21 @@ const Navbar = ({ open }) => {
         </LogoutNavigation>
 
         <LoginNavigation>
-          <NavLink className={`py-[10px] ${activeLink}`} to="/">
+          <NavLink className={`py-[6px] ${activeLink}`} to="/">
             <div className="flex">
               {open && <button className="pt-3 px-3" onClick={handleLogout}>LOGOUT</button>}
             </div>
           </NavLink>
         </LoginNavigation>
+
+        <LogoutNavigation>
+          <NavLink className={`py-[6px] ${activeLink}`} to="/login">
+            <div className="flex">
+              <img src={contact} alt="icons" className="w-12" />
+              {open && <span className="pt-3 px-3">LOGIN</span>}
+            </div>
+          </NavLink>
+        </LogoutNavigation>
         
 
         

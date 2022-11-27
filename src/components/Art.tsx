@@ -24,7 +24,7 @@ const particleOptions: ParticleOptions = {
 };
 
 const motionForce = (x: number, y: number): ParticleForce => {
-  return forces.disturbance(x, y, 20);
+  return forces.disturbance(x, y, 10);
 };
 
 export default function Art() {

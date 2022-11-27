@@ -36,20 +36,20 @@ const ItemList = ({ item }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex items-center  justify-center ">
-        <div className="relative  rounded-[16px] overflow-hidden mb-5 md:ml-5 w-[240px] md:w-[300px] h-[248px]">
+      <div className="flex items-center   my-2 justify-center ">
+        <div className="relative  rounded-[16px] overflow-hidden mb-5 md:ml-5 w-[260px] md:w-[300px] h-[248px]">
           <div className="shadow-lg h-full rounded-lg">
           <img  className="z-0 h-full object-cover hover:scale-110 duration-300" src={item.image} />
           </div>
 
-          <div className={`absolute rounded-lg  top-0 z-10 box  flex justify-center items-center  ${isOpen ? "rotate-[-180deg]" : "translate-x-[-250px] translate-y-[-205px]"} duration-500 bg-[#113e44]`}>
+          <div className={`absolute rounded-lg  top-0 z-10 box w-[260px] md:w-[300px] flex justify-center items-center  ${isOpen ? "rotate-[-180deg]" : "md:translate-x-[-250px] translate-x-[-210px] translate-y-[-205px]"} duration-500 bg-[#113e44]`}>
             <div className="rotate-[-180deg]">
               <p className="md:text-[20px] text-[14px] font-semibold w-[180px]">{item.name}</p>
                <div className="flex flex-wrap">
                {item.tech.map((stack) => {
                   return (
                     <ul key={item.id + stack} className="first:ml-0 ml-2">
-                    <li className="md:text-[16px] text-[12px] border px-2 mt-[10px] mb-[15px] hover:bg-color-brand2 hover:color-base2 font-semibold ">{stack}</li>
+                    <li className="md:text-[16px] text-[12px]  px-2 mt-[10px] mb-[15px] hover:bg-color-brand2 hover:color-base2 font-semibold ">{stack}</li>
                   </ul>
                   )
               })}

@@ -17,7 +17,7 @@ const NavRoutes = ({open , width}) => {
         <Route path="/" element={<Hero open={open} width={width} />}></Route>
         <Route path="/work" element={<Work open={open} width={width}/>}></Route>
         <Route path="/about" element={<About width={width}/>}></Route>
-        <Route path="/reviews" element={<Reviews />}></Route>
+        <Route path="/reviews" element={<Reviews width={width}  />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/blogdetails/:id" element={<BlogDetails />}></Route>

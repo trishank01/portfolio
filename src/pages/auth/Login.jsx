@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/config";
 import { REGISTER_USER_Email, USER_DISPLAY_NAME } from "../../redux/slice/authSlice";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 
 const Login = () => {
@@ -19,14 +20,13 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigate("/admin");
+        navigate("/admin/add");
+        toast.success("login successfully")
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(error.message)
-        console.log(error.code)
+        toast.error(error.message)
+
       });
   };
 
